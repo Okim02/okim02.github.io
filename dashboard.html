@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/scoremaster2.png">
+  <link rel="stylesheet" type="text/css" href="./css/dash.css">
+  <title>SCORE MASTER</title>
+</head>
+<body>
+
+  <div class="logos">
+    <div id="img">
+      <img src="./images/scoremaster2.png" style="width: 120px; height: 120px;">
+    </div>
+    <div id="logbutton">
+      <a class="submit" href="login.html">Login</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="sidebar">
+      <h2>E-Score Dashboard</h2>
+      <ul>
+        <li><a href="it_project.html">Home</a></li>
+        <li><a href="#score-entry">Score Entry</a></li>
+        <li><a href="#participants">Participant Score</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="section">
+        <h2>Dashboard Overview</h2>
+        <div class="overview-cards">
+          <div class="card">
+            <h4>Total Participants</h4>
+            <p>8 Teams</p>
+          </div>
+          <div class="card">
+            <h4>Events</h4>
+            <p>4</p>
+          </div>
+          <div class="card">
+            <h4>Average Score</h4>
+            <p>85%</p>
+          </div>
+          <div class="card">
+            <h4>Top Performer</h4>
+            <p>CCS</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>participants</h2>
+      <div class="match">
+        <div class="match-track">
+          <div class="card3">
+            <h2>Match 1</h2>
+            <p>CBA vs COC</p>
+            <a href="dashboard.html#score-entry">Details</a>
+          </div>
+          <div class="card3">
+            <h2>Match 2</h2>
+            <p>SHS vs CME</p>
+            <a href="dashboard.html#score-entry">Details</a>
+          </div>
+          <div class="card3">
+            <h2>Match 3</h2>
+            <p>CED vs COE</p>
+            <a href="dashboard.html#score-entry">Details</a>
+          </div>
+          <div class="card3">
+            <h2>Match 4</h2>
+            <p>CCS vs COHS</p>
+            <a href="dashboard.html#score-entry">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="score-entry" class="section">
+        <h2>Score Entry</h2>
+        <form id="scoreForm">
+          <label for="participant">Participant Team:</label>
+          <input type="text" id="participant" name="participant" required>
+
+          <label for="event">Event/Criteria:</label>
+          <input type="text" id="event" name="event" required>
+
+          <label for="score">Score:</label>
+          <input type="text" id="score" name="score" min="0" max="100" required>
+
+          <button type="submit">Submit Score</button>
+        </form>
+      </div>
+
+      <div id="participants" class="section">
+        <h2>Participant Scores</h2>
+        <div id="participantGrid" class="grid-container">
+          <!-- Participant cards will be dynamically added here -->
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    // Handle score form submission
+    var scoreForm = document.getElementById('scoreForm');
+    var participantGrid = document.getElementById('participantGrid');
+
+    scoreForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form values
+      var participant = document.getElementById('participant').value;
+      var event = document.getElementById('event').value;
+      var score = document.getElementById('score').value;
+
+      // Create a new grid item (participant card)
+      var newCard = document.createElement('div');
+      newCard.classList.add('grid-item');
+      newCard.innerHTML = `
+        <p>Event: ${event}</p>
+        <h4>${participant}</h4>
+        <p>Score: ${score}</p>
+      `;
+
+      // Add the new card to the grid
+      participantGrid.appendChild(newCard);
+
+      // Reset the form
+      scoreForm.reset();
+    });
+  </script>
+</body>
+</html>

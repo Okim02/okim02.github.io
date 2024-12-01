@@ -1,0 +1,289 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;  
+    }
+
+    .logos {
+      height: 120px;
+      color: white;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #img {
+      padding-left: 45px;
+      background-color: black;
+      padding-right: 50px;
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        padding: 0 20px;
+    }
+
+    .search-container input[type="text"] {
+        width: 60%;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .search-container input[type="text"]::placeholder {
+        color: #aaa;
+    }
+
+    .search-container input[type="text"]:focus {
+        border: 2px solid #4CAF50;
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        margin-right: 100px;
+        background-color: #4da6ff;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #45a049;
+    }
+
+
+    #logbutton {
+      margin-right: 60px;
+    }
+
+    #logbutton a {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px #2e7d32;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    #logbutton a:hover {
+      background-color: #4da6ff;
+    }
+
+    #logbutton a:active {
+      background-color: #388e3c;
+      box-shadow: 0 2px #2e7d32;
+      transform: translateY(2px);
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 15%;
+      background-color: #605678;
+      color: white;
+      padding: 20px;
+      border: solid gray 2px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #483d67;
+      border-radius: 5px; 
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    }
+
+    .sidebar ul li:hover {
+      background-color: #7268a2; /* Change background color on hover */
+      transform: translateX(5px); /* Slight slide effect on hover */
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block; /* Make the entire list item clickable */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: none; /* Remove underline on hover */
+    }
+
+    .main-content {
+      width: 85%;
+      background-color: #605678;
+      overflow-y: auto;
+      color: #EEEEEE;
+      border: solid gray 2px;
+    }
+
+    .mySlides {
+      display: none;
+    }
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1500px;
+      position: relative;
+      margin: auto;
+
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    
+     /* New Card Section */
+    .card-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .card2 {
+      width: 23%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card2 img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card2 h3 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      color: #333;
+    }
+
+    .card2 p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card2 a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0070c9;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .card2 a:hover {
+      background-color: #0056b3;
+    }
